@@ -1,0 +1,15 @@
+<h1>Ask Me Anything</h1>
+
+<h2>Meet our team</h2>
+<ol>
+  <% @members.each do |member| %>
+    <li><%= member.capitalize %></li>
+  <% end %>
+</ol>
+
+<%= link_to "Looking for answers", answer_path %>
+
+<form action="/answer.html" method="get" class="box">
+  <input type="text" name="my_question" value=" <%= params[:my_question] %> "placeholder="Looking for an answer?">
+  <input type="submit" value="Ask!">
+</form>
